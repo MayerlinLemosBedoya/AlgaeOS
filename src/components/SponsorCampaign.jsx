@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useContractWrite, useContractRead, useWaitForTransaction } from 'wagmi'
 
-const ESCROW_CONTRACT = "0x7e033423A7975DF3081CE08913eF8B4FE7738144"
-const PYUSD_TOKEN = "0xb4229013CBd480622Cbc8D635b686fF57Ca639df"
+const ESCROW_CONTRACT = import.meta.env.VITE_ESCROW_CONTRACT || ""
+const PYUSD_TOKEN = import.meta.env.VITE_PYUSD_TOKEN || ""
 
 // Mock campaigns data
 const campaigns = [

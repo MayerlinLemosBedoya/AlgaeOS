@@ -1,4 +1,6 @@
 const { ethers } = require("hardhat");
+const fs = require('fs');
+const path = require('path');
 
 async function main() {
   console.log("Deploying AlgaeOS contracts...");
@@ -107,6 +109,21 @@ async function main() {
   console.log("BiomassMarketplace:", marketplaceAddress);
   console.log("PYUSD Token:", PYUSD_TOKEN_ADDRESS);
   console.log("Deployer:", deployer.address);
+
+  // Write .env.local for Vite
+  try {
+    const envLocal = [
+      `VITE_ESCROW_CONTRACT=${escrowAddress}`,
+      `VITE_MARKETPLACE_CONTRACT=${marketplaceAddress}`,
+      `VITE_PYUSD_TOKEN=${PYUSD_TOKEN_ADDRESS}`,
+      ''
+    ].join('\n');
+    const envPath = path.join(__dirname, '..', '.env.local');
+    fs.writeFileSync(envPath, envLocal, { encoding: 'utf8' });
+    console.log(`\nWrote ${envPath} with deployed addresses.`);
+  } catch (e) {
+    console.warn('Could not write .env.local:', e?.message || e);
+  }
   
   console.log("\n=== Contract Verification ===");
   console.log("To verify contracts on Base Sepolia Explorer:");

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useContractWrite, useContractRead, useWaitForTransaction } from 'wagmi'
 
-const MARKETPLACE_CONTRACT = "0x7e033423A7975DF3081CE08913eF8B4FE7738144"
+const MARKETPLACE_CONTRACT = import.meta.env.VITE_MARKETPLACE_CONTRACT || ""
 
 // Mock biomass lots data
 const biomassLots = [

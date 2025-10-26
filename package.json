@@ -8,8 +8,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "compile": "hardhat compile",
-    "deploy": "hardhat run scripts/deploy.js --network baseSepolia",
-    "test": "hardhat test"
+    "deploy": "hardhat run scripts/deploy.cjs --network baseSepolia",
+    "test": "hardhat test",
+    "chain": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.cjs --network localhost"
   },
   "dependencies": {
     "react": "^18.2.0",
