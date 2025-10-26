@@ -1,0 +1,86 @@
+/* Base styles for AlgaeOS frontend */
+:root {
+  --bg: #0b1520;
+  --panel: #121e2a;
+  --muted: #8aa5b1;
+  --text: #e4f0f6;
+  --brand: #2ec27e;
+  --brand-600: #26a86c;
+  --border: #243445;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 10% -10%, #0e1b28 10%, var(--bg) 60%), var(--bg);
+}
+
+#root {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+/* Panels */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.stack { display: flex; flex-direction: column; gap: 12px; }
+.row { display: flex; align-items: center; gap: 8px; }
+
+/* Inputs */
+input, select {
+  background: #0c1823;
+  color: var(--text);
+  border: 1px solid var(--border);
+  outline: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+input[type=number] { width: 140px; }
+
+/* Buttons */
+button {
+  background: var(--brand);
+  color: #08131b;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.06s ease, background 0.2s ease, opacity 0.2s ease;
+}
+button:hover { background: var(--brand-600); transform: translateY(-1px); }
+button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* Links */
+a { color: #7bd7ff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Utility spacing overrides where inline styles existed */
+.mt-8 { margin-top: 8px; }
+.mb-8 { margin-bottom: 8px; }
+.my-8 { margin: 8px 0; }
+.gap-8 { gap: 8px; }
+.p-16 { padding: 16px; }
+.bordered { border: 1px solid var(--border); border-radius: 12px; }
+.error { color: #ff6b6b; }

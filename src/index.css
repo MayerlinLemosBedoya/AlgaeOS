@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App base styles */
+html, body, #root {
+  height: 100%;
+}
+body {
+  @apply bg-aquaBg text-darkTeal font-poppins antialiased;
+}
+
+/* Light card and buttons */
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-mint text-white font-semibold shadow-soft hover:opacity-95 transition;
+}
+.btn-secondary {
+  @apply inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-turquoise text-white font-semibold shadow-soft hover:opacity-95 transition;
+}
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-white text-darkTeal border border-gray-200 hover:bg-gray-50 transition;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-soft border border-gray-100;
+}
+
+.rounded-top-sheet {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
