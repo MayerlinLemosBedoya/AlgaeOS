@@ -53,14 +53,19 @@ export default function Landing() {
     },
   ];
 
+  const short = (a) => (a ? `${a.slice(0, 6)}…${a.slice(-4)}` : "");
+  const addr = {
+    contract: import.meta.env.VITE_CONTRACT || '',
+    pyusd: import.meta.env.VITE_PYUSD || '',
+    algae: import.meta.env.VITE_ALGAE || '',
+  };
   const links = {
     app: "/", // point to your app route
     github: "https://github.com/your-org/algaeos",
     devpost: "https://devpost.com/project/algaeos",
-    blockscoutContract:
-      "https://base-sepolia.blockscout.com/address/0x7e033423A7975DF3081CE08913eF8B4FE7738144",
-    blockscoutToken:
-      "https://base-sepolia.blockscout.com/address/0xb4229013CBd480622Cbc8D635b686fF57Ca639df",
+    blockscoutContract: `https://base-sepolia.blockscout.com/address/${import.meta.env.VITE_CONTRACT || ''}`,
+    blockscoutToken: `https://base-sepolia.blockscout.com/address/${import.meta.env.VITE_PYUSD || ''}`,
+    blockscoutAlgae: import.meta.env.VITE_ALGAE ? `https://base-sepolia.blockscout.com/address/${import.meta.env.VITE_ALGAE}` : null,
     docs: "https://your-site/docs",
   };
 
